@@ -1,6 +1,7 @@
 {
   "name": "vscode-okex-btc",
   "version": "1.0.0",
+  "publisher": "okex-btc-watch",
   "description": "查看okex比特币价格的vscode插件",
   "main": "./extension.js",
   "scripts": {
