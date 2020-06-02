@@ -1,0 +1,75 @@
+{
+  "name": "vscode-okex-btc",
+  "version": "1.0.0",
+  "description": "查看okex比特币价格的vscode插件",
+  "main": "./extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handoing/vscode-okex-btc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/handoing/vscode-okex-btc/issues"
+  },
+  "homepage": "https://github.com/handoing/vscode-okex-btc#readme",
+  "icon": "img/icon.png",
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:USDT"
+  ],
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "btc-price-watch-list": {
+          "type": "array",
+          "default": [
+            "BTC-USDT"
+          ],
+          "description": "配置需要监控的数字货币"
+        },
+        "btc-price-watch-interval": {
+          "type": "number",
+          "default": 10000,
+          "description": "配置轮询请求最新数据的时间间隔，单位：毫秒"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "blockChain",
+          "title": "数字货币价格监控",
+          "icon": "img/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "blockChain": [
+        {
+          "id": "USDT",
+          "name": "USDT"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "coin.focus",
+        "title": "跳转到浏览器OKEX地址"
+      }
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "open": "^7.0.4"
+  }
+}
